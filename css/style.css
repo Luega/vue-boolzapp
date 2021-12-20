@@ -44,6 +44,7 @@ html {
     /* sizing */
     --header-height: 60px;
     --row-height: 70px;
+    --input-height: 50px;
     /* padding */
     --header-padding: 0.5rem;
     --row-padding: 1rem;
@@ -99,9 +100,34 @@ body {
     border-radius: 50%;
 }
 
-/* chat-list */
-.chat-list {
+/* chat */
+.chat {
     width: 100%;
     height: calc(100% - var(--header-height) - var(--row-height));
     background-color: chartreuse;
+}
+/* search-chat */
+.chat .search-chat {
+    width: 100%;
+    height: var(--input-height);
+    background-color: yellow;
+}
+.search-chat form {
+    width: 95%;
+    height: 80%;
+    margin: auto;
+    box-shadow: 0px 0px 1px #888888;
+}
+.search-chat button {
+    width: 60px;
+    font-size: 1.1rem;
+    color: var(--second-text-color);
+    background-color: transparent;
+    border: none;
+}
+.chat .search-chat input {
+    width: calc(100% - 60px);
+    color: var(--second-text-color);
+    background-color: transparent;
+    border: none;
 }
