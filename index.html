@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <title>Vue-boolzapp</title>
 </head>
+<!-- BODY -->
 <body class="flex">
+    <!-- CONTAINER -->
     <div class="container flex">
         <!-- LEFT COL -->
-        <div></div>
-        <!-- RIGHT COL -->
-        <div></div>
+        <div class="left-col flex flex-direction-column">
+            <!-- header -->
+            <header class="flex justify-content-space-between">
+                <!-- user -->
+                <div class="user flex align-items-center">
+                    <img src="img/avatar_io.jpg" alt="user-image">
+                    <span>Nome Utente</span>
+                </div>
+                <!-- options -->
+                <div class="options flex align-items-center">
+                    <a href="#">
+                        <i class="fas fa-circle-notch"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-comment-alt"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                </div>
+            </header>
+            <div class="banner"></div>
+            <div class="chat-list"></div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

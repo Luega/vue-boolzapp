@@ -1,16 +1,35 @@
+/* GENERAL */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    font-size: 100%;
+}
 /* CLASSES */
 .flex {
     display: flex;
 }
+.flex-direction-column {
+    flex-direction: column;
+}
+.align-items-center {
+    align-items: center;
+}
+.justify-content-space-between {
+    justify-content: space-between;
+}
 /* VARIABLES */
 :root {
+    /* colors */
     --first-body-bg-color: rgba(0,150,136,255);
     --second-body-bg-color: rgba(219,219,210,255);
+    --header-bg: rgba(234,234,234,255);
+    /* sizing */
+    --header-height: 60px;
+    /* padding */
+    --header-padding: 0.5rem;
   }
 /* BODY */
 body {
@@ -27,4 +46,32 @@ body {
     min-width: 600px;
     min-height: 400px;
     margin: auto;
+}
+/* LEFT COL */
+.left-col {
+    width: 35%;
+    height: 100%;
+    background-color: red;
+}
+/* header */
+.left-col header {
+    width: 100%;
+    height: var(--header-height);
+    padding: var(--header-padding);
+    background-color: var(--header-bg);
+}
+/* user */
+.user img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.user span {
+    font-weight: 800;
+    margin-left: 0.5rem;
+}
+/* options */
+.options i {
+    color: rgba(177,177,177,255);
+    padding: 0.5rem;
 }
