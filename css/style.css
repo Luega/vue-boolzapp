@@ -20,16 +20,33 @@ html {
 .justify-content-space-between {
     justify-content: space-between;
 }
+.display-block {
+    display: block;
+}
+.bold {
+    font-weight: 800;
+}
+.second-text-color {
+    color: var(--second-text-color);
+}
+.pd {
+    padding: 0.5rem;
+}
 /* VARIABLES */
 :root {
     /* colors */
+    --second-text-color: rgba(177,177,177,255);
     --first-body-bg-color: rgba(0,150,136,255);
     --second-body-bg-color: rgba(219,219,210,255);
     --header-bg: rgba(234,234,234,255);
+    --first-notification-color: rgba(142,218,252,255);
+    --second-notification-color: rgba(242,251,255,255);
     /* sizing */
     --header-height: 60px;
+    --row-height: 70px;
     /* padding */
     --header-padding: 0.5rem;
+    --row-padding: 1rem;
   }
 /* BODY */
 body {
@@ -40,10 +57,10 @@ body {
 }
 /* CONTAINER */
 .container {
-    background-color: aqua;
+    background-color: blue;
     width: 85%;
     height: 95%;
-    min-width: 600px;
+    min-width: 900px;
     min-height: 400px;
     margin: auto;
 }
@@ -51,8 +68,8 @@ body {
 .left-col {
     width: 35%;
     height: 100%;
-    background-color: red;
 }
+
 /* header */
 .left-col header {
     width: 100%;
@@ -66,12 +83,25 @@ body {
     height: 45px;
     border-radius: 50%;
 }
-.user span {
-    font-weight: 800;
-    margin-left: 0.5rem;
+
+/* notification */
+.notification {
+    width: 100%;
+    height: var(--row-height);
+    padding: var(--row-padding);
+    background-color: var(--first-notification-color);
 }
-/* options */
-.options i {
-    color: rgba(177,177,177,255);
-    padding: 0.5rem;
+.notification i {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    color: var(--first-notification-color);
+    background-color: var(--second-notification-color);
+    border-radius: 50%;
+}
+
+/* chat-list */
+.chat-list {
+    width: 100%;
+    height: calc(100% - var(--header-height) - var(--row-height));
+    background-color: chartreuse;
 }
