@@ -54,11 +54,11 @@
                 </div>
                 <div class="chat-list flex flex-direction-column">
                     <!-- people -->
-                    <div v-for="index in contacts" class="flex justify-content-space-between pd">
+                    <div v-for="contact in contacts" class="flex justify-content-space-between pd">
                         <div class="person flex">
-                        <img :src="`img/avatar${index.avatar}.jpg`" alt="person-image">
+                        <img :src="`img/avatar${contact.avatar}.jpg`" alt="person-image">
                             <div class="flex flex-direction-column pd">
-                                <span class="bold">{{ index.name }}</span>
+                                <span class="bold">{{ contact.name }}</span>
                                 <span class="font-size-small second-text-color">Ciao...</span>
                             </div>
                         </div>
@@ -94,13 +94,9 @@
             </header>
             <!-- messages box -->
             <div class="messages-box flex flex-direction-column">
-                <div class="message flex flex-direction-column pd">
-                    <span>La Marianna va in campagna</span>
-                    <span class="align-self-end second-text-color font-size-small">data</span>
-                </div>
-                <div class="message flex flex-direction-column pd sent">
-                    <span>Sicuro?</span>
-                    <span class="align-self-end second-text-color font-size-small">data</span>
+                <div v-for="message in contacts[0].messages" class="message flex flex-direction-column pd">
+                    <span>{{ message.text }}</span>
+                    <span class="align-self-end second-text-color font-size-small">{{ message.date }}</span>
                 </div>
             </div>
             <!-- writing box -->
