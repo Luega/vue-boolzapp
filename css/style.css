@@ -16,6 +16,9 @@ html {
 .align-items-center {
     align-items: center;
 }
+.align-self-end {
+    align-self: end;
+}
 .justify-content-space-between {
     justify-content: space-between;
 }
@@ -30,6 +33,9 @@ html {
 }
 .pd {
     padding: 0.5rem;
+}
+.font-size-small {
+    font-size: 0.8rem;
 }
 /* VARIABLES */
 :root {
@@ -46,6 +52,7 @@ html {
     --header-height: 60px;
     --row-height: 70px;
     --input-height: 50px;
+    --message-height: 45px;
     /* padding */
     --header-padding: 0.5rem;
     --row-padding: 1rem;
@@ -143,6 +150,18 @@ header {
 .messages-box {
     width: 100%;
     height: calc(100% - var(--header-height) - var(--input-height));
+    padding: 20px 60px;
+}
+.messages-box .message {
+    width: 60%;
+    background-color: var(--first-raw-bg);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 1px #888888;;
+}
+.messages-box .sent {
+    align-self: end;
+    background-color: rgba(213,249,186,255);
 }
 /* writing box */
 .writing-box {
