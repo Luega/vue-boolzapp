@@ -56,9 +56,9 @@
                     <!-- people -->
                     <div v-for="index in contacts" class="flex justify-content-space-between pd">
                         <div class="person flex">
-                            <img src="img/avatar_1.jpg" alt="person-image">
+                        <img :src="`img/avatar${index.avatar}.jpg`" alt="person-image">
                             <div class="flex flex-direction-column pd">
-                                <span class="bold">Samuele</span>
+                                <span class="bold">{{ index.name }}</span>
                                 <span class="font-size-small second-text-color">Ciao...</span>
                             </div>
                         </div>
