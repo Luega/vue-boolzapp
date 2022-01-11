@@ -47,14 +47,14 @@
             <section class="chat flex flex-direction-column">
                 <!-- search-chat -->
                 <div class="search-chat flex">
-                    <form class="flex" action="#">
+                    <form class="flex">
                         <button type="submit"><i class="fa fa-search"></i></button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
+                        <input v-model="search" @keyup="findContact" placeholder="Cerca o inizia una nuova chat" name="search">
                       </form>
                 </div>
                 <div class="chat-list flex flex-direction-column">
                     <!-- people -->
-                    <div v-for="contact in contacts" class="flex justify-content-space-between pd">
+                    <div v-if="contact.visible" v-for="(contact, index) in contacts" @click="fillInfo(index)" class="flex justify-content-space-between pd">
                         <div class="person flex">
                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="person-image">
                             <div class="flex flex-direction-column pd">
@@ -73,9 +73,9 @@
             <header class="flex justify-content-space-between">
                 <!-- person -->
                 <div class="person flex align-items-center">
-                    <img src="img/avatar_1.jpg" alt="person-image">
+                    <img :src="`img/avatar${contacts[indexContact].avatar}.jpg`" alt="person-image">
                     <div class="flex flex-direction-column pd">
-                        <span class="bold">Samuele</span>
+                        <span class="bold">{{ contacts[indexContact].name }}</span>
                         <span>Ultimo accesso oggi</span>
                     </div>
                 </div>
@@ -94,16 +94,16 @@
             </header>
             <!-- messages box -->
             <div class="messages-box flex flex-direction-column">
-                <div v-for="message in contacts[0].messages" class="message flex flex-direction-column pd">
+                <div v-for="(message, index) in contacts[indexContact].messages" :class="(message.status == 'sent') ? 'sent' : ''" class="message flex flex-direction-column pd">
                     <span>{{ message.text }}</span>
                     <span class="align-self-end second-text-color font-size-small">{{ message.date }}</span>
                 </div>
             </div>
             <!-- writing box -->
             <div class="writing-box flex">
-                <form class="flex align-items-center" action="#">
+                <form class="flex align-items-center">
                     <button><i class="far fa-smile"></i></button>
-                    <input type="text" placeholder="Scrivi un messaggio" name="write">
+                    <input v-model="newMessage" @keyup.enter="sendMessage()" placeholder="Scrivi un messaggio">
                     <button><i class="fas fa-microphone"></i></button>
                   </form>
             </div>

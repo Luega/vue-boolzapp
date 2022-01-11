@@ -1,11 +1,10 @@
-// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-
-// Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-
 const app = new Vue(
     {
       el: "#app",
       data: {
+        indexContact: 0,
+        newMessage: "",
+        search:"",
         contacts: [
           {
             name: "Michele",
@@ -92,6 +91,42 @@ const app = new Vue(
           },
         ],
       },
-      methods: {}
+      methods: {
+        fillInfo(index) {
+          console.log(index);
+          this.indexContact = index;
+        },
+        sendMessage() {
+          const index = this.indexContact;
+
+          let message = {
+            date: "last message",
+            text: this.newMessage,
+            status: "sent",
+          };
+          this.contacts[index].messages.push(message);
+
+          this.newMessage = "";
+
+          setTimeout(()=> {
+            let message = {
+              date: "last message",
+              text: "ok",
+              status: "",
+            };
+            this.contacts[index].messages.push(message);
+          }, 1000);
+        },
+        findContact() {
+          let textSearch = this.search.toLowerCase();
+          this.contacts.forEach(element => {
+            if (element.name.toLowerCase().includes(textSearch)) {
+              element.visible = true;
+            } else {
+              element.visible = false;
+            }
+          });
+        },
+      }
     }
   );

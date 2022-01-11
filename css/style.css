@@ -133,9 +133,10 @@ header {
 }
 .chat .search-chat input {
     width: calc(100% - 60px);
-    color: var(--second-text-color);
+    color: black;
     background-color: transparent;
     border: none;
+    text-shadow: none;
 }
 /* RIGHT COL */
 .right-col {
@@ -152,6 +153,7 @@ header {
     width: 100%;
     height: calc(100% - var(--header-height) - var(--input-height));
     padding: 20px 60px;
+    overflow: auto;
 }
 .messages-box .message {
     width: 60%;
@@ -184,7 +186,7 @@ header {
     width: calc(100% - 120px);
     height: 70%;
     padding: 1rem;
-    color: var(--second-text-color);
+    color: black;
     border: none;
     box-shadow: 0px 0px 1px #888888;
 }
